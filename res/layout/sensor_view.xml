@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <RadioGroup
+        android:id="@+id/sensorRateSelector"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" >
+
+        <RadioButton
+            android:id="@+id/delayFastest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="SENSOR_DELAY_FASTEST" />
+    </RadioGroup>
+
+    <View
+        android:id="@+id/seperator"
+        style="@style/line_separator"
+        android:layout_below="@id/sensorRateSelector" />
+
+    <TextView
+        android:id="@+id/accuracyLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/seperator"
+        android:layout_marginRight="5dip"
+        android:text="Accuracy:" />
+
+    <TextView
+        android:id="@+id/accuracy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/accuracyLabel"
+        android:layout_alignTop="@id/accuracyLabel"
+        android:layout_toRightOf="@id/accuracyLabel" />
+
+    <!-- timestamp -->
+
+    <TextView
+        android:id="@+id/timestampLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/accuracyLabel"
+        android:layout_below="@id/accuracyLabel"
+        android:layout_marginRight="5dip"
+        android:text="Timestamp:" />
+
+    <TextView
+        android:id="@+id/timestamp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/timestampLabel"
+        android:layout_alignTop="@id/timestampLabel"
+        android:layout_marginRight="5dip"
+        android:layout_toRightOf="@id/timestampLabel"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/timestampUnits"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/timestamp"
+        android:layout_alignTop="@id/timestamp"
+        android:layout_toRightOf="@id/timestamp"
+        android:text="(ns)"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/dataLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/accuracyLabel"
+        android:layout_below="@id/timestampLabel"
+        android:layout_marginRight="5dip"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/dataUnits"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/dataLabel"
+        android:layout_alignTop="@id/dataLabel"
+        android:layout_toRightOf="@id/dataLabel"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/singleValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/dataUnits"
+        android:layout_alignTop="@id/dataUnits"
+        android:layout_toRightOf="@id/dataUnits"
+        android:visibility="gone" />
+
+    <!-- X axis -->
+
+    <TextView
+        android:id="@+id/xAxisLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/dataLabel"
+        android:layout_below="@id/dataLabel"
+        android:layout_marginRight="5dip"
+        android:text="@string/xAxisLabel"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/xAxis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/xAxisLabel"
+        android:layout_alignTop="@id/xAxisLabel"
+        android:layout_marginRight="5dip"
+        android:layout_toRightOf="@id/xAxisLabel"
+        android:visibility="gone" />
+
+    <!-- Y axis -->
+
+    <TextView
+        android:id="@+id/yAxisLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/xAxisLabel"
+        android:layout_below="@id/xAxisLabel"
+        android:layout_marginRight="5dip"
+        android:text="@string/yAxisLabel"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/yAxis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/yAxisLabel"
+        android:layout_alignTop="@id/yAxisLabel"
+        android:layout_marginRight="5dip"
+        android:layout_toRightOf="@id/yAxisLabel"
+        android:visibility="gone" />
+
+    <!-- Z axis -->
+
+    <TextView
+        android:id="@+id/zAxisLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/yAxisLabel"
+        android:layout_below="@id/yAxisLabel"
+        android:layout_marginRight="5dip"
+        android:text="@string/zAxisLabel"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/zAxis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/zAxisLabel"
+        android:layout_alignTop="@id/zAxisLabel"
+        android:layout_marginRight="5dip"
+        android:layout_toRightOf="@id/zAxisLabel"
+        android:visibility="gone" />
+
+    <!-- cos value (for rotation vector only) -->
+
+    <TextView
+        android:id="@+id/cosLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/zAxisLabel"
+        android:layout_below="@id/zAxisLabel"
+        android:layout_marginRight="5dip"
+        android:text="cos(\u0398/2):"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/cos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/cosLabel"
+        android:layout_alignTop="@id/cosLabel"
+        android:layout_marginRight="5dip"
+        android:layout_toRightOf="@id/cosLabel"
+        android:visibility="gone" />
+     <TextView
+        android:id="@+id/latitudeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/timestampLabel"
+        android:layout_marginTop="100dp"
+        android:text="Latitude" />
+        
+    <TextView
+        android:id="@+id/latitudeValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/longitudeLabel"
+        android:layout_alignTop="@id/latitudeLabel"
+        android:layout_toRightOf="@id/latitudeLabel" />
+        
+    <TextView android:id="@+id/longitudeLabel"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="@string/longitudeLabel"
+        android:layout_below="@id/latitudeLabel"
+        android:layout_marginRight="4dip" />
+        
+    <TextView android:id="@+id/longitudeValue"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_alignTop="@id/longitudeLabel" 
+        android:layout_toRightOf="@id/longitudeLabel" />
+        
+    <TextView android:id="@+id/providerLabel"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="@string/providerLabel"
+        android:layout_below="@id/longitudeLabel"
+        android:layout_marginRight="4dip" />
+        
+    <TextView android:id="@+id/providerValue"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_alignTop="@id/providerLabel" 
+        android:layout_toRightOf="@id/providerLabel" />
+        
+    <TextView android:id="@+id/accuracyLabel1"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="@string/accuracyLabel"
+        android:layout_below="@id/providerLabel"
+        android:layout_marginRight="4dip" />
+        
+    <TextView android:id="@+id/accuracyValue"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_alignTop="@id/accuracyLabel1" 
+        android:layout_toRightOf="@id/accuracyLabel1" />
+        
+    <TextView android:id="@+id/accuracyUnits"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="@string/metersUnit"
+        android:layout_alignTop="@id/accuracyLabel1" 
+        android:layout_toRightOf="@id/accuracyValue"
+        android:layout_marginLeft="4dip" />
+        
+    <TextView android:id="@+id/timeToFixLabel"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="@string/timeToFixLabel"
+        android:layout_below="@id/accuracyLabel1"
+        android:layout_marginRight="4dip" />
+        
+    <TextView android:id="@+id/timeToFixValue"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_alignTop="@id/timeToFixLabel" 
+        android:layout_toRightOf="@id/timeToFixLabel" />
+        
+    <TextView android:id="@+id/timeToFixUnits"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="@string/secondsUnit"
+        android:layout_alignTop="@id/timeToFixLabel" 
+        android:layout_toRightOf="@id/timeToFixValue"
+        android:layout_marginLeft="4dip" />
+    
+    <TextView android:id="@+id/enabledProvidersLabel"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="@string/enabledProvidersLabel"
+        android:layout_below="@id/timeToFixLabel"
+        android:layout_marginRight="4dip" />
+        
+    <TextView android:id="@+id/enabledProvidersValue"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_alignTop="@id/enabledProvidersLabel" 
+        android:layout_toRightOf="@id/enabledProvidersLabel" />
+
+   
+
+    <RadioGroup
+        android:id="@+id/modes"
+        android:layout_width="100dp"
+        android:layout_height="300dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/latitudeValue" >
+
+        <RadioButton
+            android:id="@+id/tram"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tram" />
+
+        <RadioButton
+            android:id="@+id/train"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Train" />
+
+        <RadioButton
+            android:id="@+id/bus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bus" />
+
+        <RadioButton
+            android:id="@+id/car"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Car" />
+
+        <RadioButton
+            android:id="@+id/bike"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bike" />
+
+        <RadioButton
+            android:id="@+id/walk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Walk" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/speedValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/enabledProvidersLabel"
+        android:text="Speed" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:background="@color/khaki" >
+
+        <TextView
+            android:id="@+id/tv_resultlog"
+            style="@style/apptext"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="54dp"
+            android:background="@color/khaki"
+            android:textColor="@android:color/black" />
+    </ScrollView>
+
+</RelativeLayout>

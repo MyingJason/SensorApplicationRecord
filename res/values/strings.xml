@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">SensorApplication</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    
+    <string name="azimuthLabel">Azimuth (Z Axis):</string>
+    <string name="pitchLabel">Pitch (X Axis):</string>
+    <string name="rollLabel">Roll (Y Axis):</string>
+    
+    <string name="xAxisLabel">X Axis:</string>
+    <string name="yAxisLabel">Y Axis:</string>
+    <string name="zAxisLabel">Z Axis:</string>
+    
+    <string name="latitudeLabel">Latitude:</string>
+    <string name="longitudeLabel">Longitude:</string>
+    <string name="providerLabel">Provider:</string>
+    <string name="accuracyLabel">Accuracy:</string>
+    <string name="timeToFixLabel">Time to Fix:</string>
+    <string name="secondsUnit">second(s)</string>
+    <string name="metersUnit">meters(s)</string>
+    <string name="enabledProvidersLabel">Enabled Providers:</string>
+    
+    
+    <string name="audio_status_recording">Recording</string>
+    <string name="audio_status_stopped">Not Recording</string>
+    <string name="audio_log">Detections</string>
+    
+
+</resources>
